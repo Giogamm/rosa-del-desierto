@@ -1,0 +1,38 @@
+[
+  {
+    "foto": "./obesum.jpg",
+    "nombre": "Adenium obesum",
+    "descripcion": "Es la especie más común y la que generalmente se conoce como rosa del desierto. Tiene flores grandes y coloridas que varían del rosa al rojo intenso.",
+    "id": 1
+  },
+  {
+    "foto": "./boehmianum.jpg",
+    "nombre": "Adenium boehmianum",
+    "descripcion": "Originaria de Namibia y Angola, esta subespecie tiene flores de color rosa pálido a blanco y hojas más estrechas.",
+    "id": 2
+  },
+  {
+    "foto": "./oleifolium.jpg",
+    "nombre": "Adenium oleifolium",
+    "descripcion": "Se encuentra en Sudáfrica y Botswana. Sus flores son más pequeñas y de color rosa claro, y sus hojas son largas y delgadas.",
+    "id": 3
+  },
+  {
+    "foto": "./socotranum.jpg",
+    "nombre": "Adenium socotranum",
+    "descripcion": "Nativa de la isla de Socotra en Yemen, es la más grande de todas las subespecies, pudiendo alcanzar hasta 5 metros de altura. Sus flores son de color rosa pálido.",
+    "id": 4
+  },
+  {
+    "foto": "./somalense.jpg",
+    "nombre": "Adenium somalense",
+    "descripcion": "Originaria de Somalia y Kenia, esta subespecie tiene un crecimiento más rápido y flores de color rojo intenso.",
+    "id": 5
+  },{
+
+      "foto": "./multiflorum.jpg",
+      "nombre": "Adenium multiflorum",
+      "descripcion": "Esta subespecie es nativa de la isla de Madagascar y tiene flores de color rosa claro y flores de color rojo intenso.",
+      "id": 6
+  }
+]

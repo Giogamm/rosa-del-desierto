@@ -1,0 +1,57 @@
+---
+import tipos from "../client/tipos.json";
+import subtipos from "../client/subtipos.json";
+---
+
+<h2 class="text-center mt-5 font-bold" id="tipos">
+  Tipos de la Rosa del <strong class="text-rose-600">Desierto</strong>
+</h2>
+<div
+  class="bg-[#d9c4a1] p-6 rounded-lg shadow-md grid grid-cols-2 md:grid-cols-3 gap-4"
+>
+  {
+    tipos.map((tipo) => (
+      <div class=" flex items-center justify-center max-w-prose">
+        <a href={`./tipos/${tipo.id}`}>
+          {" "}
+          <img
+            src={tipo.foto}
+            alt={tipo.nombre}
+            class="size-32 mb-4"
+            transition:name={`tipo-${tipo.id}`}
+          />
+        </a>
+      </div>
+    ))
+  }
+</div>
+
+<h2 class="text-center mt-5 font-bold">
+  subtipos de la Rosa del <strong class="text-rose-600">Desierto</strong>
+</h2>
+<div class="bg-[#d9c4a1] p-6 rounded-lg shadow-md grid grid-cols-2 gap-4">
+  {
+    subtipos.map((subtipo) => (
+      <div class=" flex items-center justify-center max-w-prose">
+        <a href={`./subtipos/${subtipo.id}`}>
+          {" "}
+          <img
+            src={subtipo.foto}
+            alt={subtipo.nombre}
+            class="size-32 mb-4"
+            transition:name={`subtipo-${subtipo.id}`}
+          />
+        </a>
+      </div>
+    ))
+  }
+</div>
+<style>
+  img {
+    transition: transform 0.3s ease-in-out; /* Transición suave */
+  }
+
+  img:hover {
+    transform: rotate(-10deg); /* Rotación sin animación */
+  }
+</style>

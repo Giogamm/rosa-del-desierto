@@ -1,0 +1,27 @@
+[
+  {
+    "foto": "arabicum.jpg",
+    "nombre": "Adenium arabicum",
+    "descripcion": "Originaria de la Península Arábiga, esta subespecie tiene un tallo más grueso y robusto, y sus flores son generalmente de color rosa.",
+    "id": 1
+  },
+  {
+    "foto": "multiflorum.jpg",
+    "nombre": "Adenium multiflorum",
+    "descripcion": "Conocida como la rosa del desierto de muchas flores, esta subespecie es nativa del sur de África y se caracteriza por sus abundantes flores blancas con bordes rojos.",
+    "id": 2
+  },
+  {
+    "foto": "swazicum.jpg",
+    "nombre": "Adenium swazicum",
+    "descripcion": "Originaria de Swazilandia y Sudáfrica, esta subespecie tiene flores de color rosa a púrpura y es más compacta en tamaño.",
+    "id": 3
+  },
+  {
+    "foto": "somalense.jpg",
+    "nombre": "Adenium somalense",
+    "descripcion": "Esta subespecie es nativa de la isla de Somalia y tiene flores de color rosa claro y flores de color rojo intenso.",
+    "id": 4
+  }
+  
+]

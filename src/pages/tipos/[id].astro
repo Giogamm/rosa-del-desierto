@@ -1,0 +1,49 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import tipos from "../../client/tipos.json";
+
+const tiposId = Number(Astro.params.id);
+const tipo = tipos.find((tipo) => tipo.id === tiposId);
+if (!tipo) throw new Error(`No se encuentra el tipo con id ${tiposId}`);
+
+export async function getStaticPaths() {
+  return tipos.map((tipo) => ({
+    params: { id: tipo.id.toString() },
+    props: { tipo },
+  }));
+}
+---
+
+<Layout title={`Foto de: ${tipo.nombre}`}>
+  <div class="flex justify-center items-center h-screen dark:bg-gray-900">
+    <main
+      class="bg-white shadow-2xl border-gray-600 p-6 max-w-md w-full flex flex-col justify-center items-center m-4 dark:bg-gray-800 dark:border-gray-700"
+    >
+      <img
+        src={`../../${tipo.foto}`}
+        alt={tipo.nombre}
+        class="h-56 object-cover w-full rounded-lg"
+        transition:name={`tipo-${tipo.id}`}
+      />
+
+      <div
+        class="flex flex-col justify-center items-center dark:text-gray-100 mt-4"
+      >
+        <h2 class="font-bold text-2xl text-center mb-3 text-rose-600">
+          {tipo.nombre}
+        </h2>
+        <p class="max-w-prose dark:text-gray-100 p-3 text-center">
+          {tipo.descripcion}
+        </p>
+
+        <a href="/#tipos">
+          <button
+            class="py-2 px-4 bg-sky-400 rounded-lg mt-4 hover:scale-105 transition-all duration-300 ease-in-out w-full sm:w-32"
+          >
+            Regresar
+          </button>
+        </a>
+      </div>
+    </main>
+  </div>
+</Layout>

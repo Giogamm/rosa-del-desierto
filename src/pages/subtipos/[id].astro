@@ -1,0 +1,49 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import subtipos from "../../client/subtipos.json";
+
+const subtiposId = Number(Astro.params.id);
+const subtipo = subtipos.find((subtipo) => subtipo.id === subtiposId);
+if (!subtipo) throw new Error(`No se encuentra el tipo con id ${subtiposId}`);
+
+export async function getStaticPaths() {
+  return subtipos.map((subtipo) => ({
+    params: { id: subtipo.id.toString() },
+    props: { subtipo },
+  }));
+}
+---
+
+<Layout title={`Foto de: ${subtipo.nombre}`}>
+  <div class="flex justify-center items-center h-screen dark:bg-gray-900">
+    <main
+      class="bg-white shadow-2xl border-gray-600 p-6 max-w-md w-full flex flex-col justify-center items-center m-4 dark:bg-gray-800 dark:border-gray-700"
+    >
+      <img
+        src={`../../${subtipo.foto}`}
+        alt={subtipo.nombre}
+        class="h-56 object-cover w-full rounded-lg"
+        transition:name={`subtipo-${subtipo.id}`}
+      />
+
+      <div
+        class="flex flex-col justify-center items-center dark:text-gray-100 mt-4"
+      >
+        <h2 class="font-bold text-2xl text-center mb-3 text-rose-600">
+          {subtipo.nombre}
+        </h2>
+        <p class="max-w-prose dark:text-gray-100 p-3 text-center">
+          {subtipo.descripcion}
+        </p>
+
+        <a href="/#tipos">
+          <button
+            class="py-2 px-4 bg-sky-400 rounded-lg mt-4 hover:scale-105 transition-all duration-300 ease-in-out w-full sm:w-32"
+          >
+            Regresar
+          </button>
+        </a>
+      </div>
+    </main>
+  </div>
+</Layout>
